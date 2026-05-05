@@ -1,0 +1,94 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast - Cyber-Academic Variant)",
+  "color_palette": {
+    "background": "#0A0A0A",
+    "surface": "#141414",
+    "surface_hover": "#1F1F1F",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "primary_accent": "#FF3B30",
+    "primary_accent_hover": "#FF453A",
+    "secondary_accent": "#0A84FF",
+    "success": "#32D74B",
+    "warning": "#FF9F0A",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "text_muted": "#71717A"
+  },
+  "fonts": {
+    "headings": "IBM Plex Mono",
+    "body": "Inter",
+    "data_metrics": "IBM Plex Mono",
+    "import_instruction": "Add to index.html: <link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+  },
+  "typography": {
+    "h1": "text-4xl font-bold tracking-tight font-mono text-white",
+    "h2": "text-2xl font-semibold tracking-tight font-mono text-white",
+    "h3": "text-lg font-medium font-mono text-white",
+    "body": "text-sm text-gray-300 font-sans",
+    "metric_value": "text-3xl font-bold text-white font-mono",
+    "metric_label": "text-xs uppercase tracking-[0.2em] text-gray-400 font-mono"
+  },
+  "spacing_and_layout": {
+    "grid_type": "Control Room Grid",
+    "gap": "gap-4 md:gap-6",
+    "card_padding": "p-6",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+  },
+  "components": {
+    "card": "bg-[#141414] border border-white/10 rounded-sm shadow-none",
+    "button_primary": "bg-[#FF3B30] hover:bg-[#FF453A] text-white font-mono text-sm px-4 py-2 rounded-sm transition-colors",
+    "button_secondary": "bg-transparent border border-white/20 hover:border-white/40 text-white font-mono text-sm px-4 py-2 rounded-sm transition-colors",
+    "input": "bg-black border border-white/10 rounded-sm text-white focus:border-[#FF3B30] focus:ring-1 focus:ring-[#FF3B30] font-mono text-sm placeholder:text-gray-600",
+    "table": "w-full text-left font-mono text-sm border-collapse",
+    "table_header": "border-b border-white/20 text-gray-400 py-3 font-medium",
+    "table_row_default": "border-b border-white/5",
+    "table_row_proposed": "border-b border-[#FF3B30]/30 bg-[#FF3B30]/5 font-bold text-[#FF3B30]"
+  },
+  "image_urls": {
+    "login_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/e919bdbe-c645-4b91-8ad4-f67c81ad43c8/images/0de0e8e12324679ac0e2fd75a7c0090fb4cfc2b1cc25a77d3ed76895aaaa20fc.png",
+      "description": "Abstract cryptographic nodes background for the login page overlay."
+    },
+    "sample_cover_image": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/e919bdbe-c645-4b91-8ad4-f67c81ad43c8/images/0aba3a497fbc6bcd9a6f8c92ee333fe0fc3ed33e75bedef5f01f7f5714ac7fb7.png",
+      "description": "Reference sample cover image for steganography algorithm visual processing."
+    },
+    "psnr_epoch_graph": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/e919bdbe-c645-4b91-8ad4-f67c81ad43c8/images/279cc30ce91f0c2fb90a373a072d0346c6132b43ba19ee2e47d17950b75f1eba.png",
+      "description": "Static reference plot for PSNR vs Epoch training graphs."
+    },
+    "timing_comparison_chart": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/e919bdbe-c645-4b91-8ad4-f67c81ad43c8/images/723f273e327689ffe418e1cc9120e9f30c10fd6ca52d258c71bf580c82c211ce.png",
+      "description": "Static reference plot for Steganalysis resistance / Timing comparison."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build a full-stack demo for the SGIC project with React/Vite/Tailwind for the frontend. Implement simulated interactive responses for the Embed/Extract flows so the demo feels instant.",
+    "Create 3 main routes: / (Login), /sender (Sender Dashboard), /receiver (Receiver Dashboard).",
+    "Authentication: Implement a mocked Google social login screen using the 'login_background' image behind a dark blur overlay.",
+    "Navigation: Add a sticky top nav bar displaying the project title (SGIC) in monospace, allowing switching between Sender, Receiver, and Logout.",
+    "Sender Page Layout: Follow the 'Control Room' grid rules (tight gaps, utilizing full height per row). Use cardless or very flat panels (1px border, no shadow, small rounded corners).",
+    "Sender Top Section: Image Upload & Controls (Secret message input, secret key input, 'Embed & Send' CTA).",
+    "Tabs Component (Sender): Use Shadcn Tabs to switch between 'Metrics', 'Visualizations', and 'Comparison'.",
+    "Metrics Tab: Display simulated values for PSNR, SSIM, BPP, Chi-Square, and RS Analysis using strict grid metrics cards.",
+    "Visualizations Tab: Render 3 images side-by-side (Original, Stego, Difference x50) using the 'sample_cover_image' to simulate input/output. Below them, render simulated RGB histograms.",
+    "Comparison Tab: Render a data table (Methods: LSB, LSB_XOR, DCT, GAN, PROPOSED). The 'PROPOSED' row MUST have a red text color, bold font weight, and a red background tint using the 'table_row_proposed' class.",
+    "Receiver Page Layout: Panel for Stego Image Upload, Secret Key input, and 'Extract Message' CTA. Display a recovered text block, a success/failure verification badge, and Bit Error Rate (BER) metric.",
+    "Additional Global Panels (Placed on Sender Dashboard or new tabs): 'Robustness Testing' panel showing simulated attack results (Gaussian Noise, JPEG compression). 'Ablation Study' table. 'Graphs' section mapping to the generated static reference plot images.",
+    "All text should use 'Inter' for body and 'IBM Plex Mono' for headings, data metrics, tabs, and tables to reinforce the academic cybersecurity aesthetic."
+  ],
+  "testing_attributes": {
+    "login_button": "data-testid='google-login-button'",
+    "sender_upload": "data-testid='sender-image-upload'",
+    "secret_message": "data-testid='secret-message-input'",
+    "secret_key": "data-testid='secret-key-input'",
+    "embed_send": "data-testid='embed-send-button'",
+    "receiver_upload": "data-testid='receiver-image-upload'",
+    "extract_button": "data-testid='extract-message-button'",
+    "recovered_message": "data-testid='recovered-message-display'",
+    "tabs_metrics": "data-testid='tab-metrics'",
+    "tabs_visualizations": "data-testid='tab-visualizations'",
+    "tabs_comparison": "data-testid='tab-comparison'"
+  }
+}
